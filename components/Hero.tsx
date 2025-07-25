@@ -1,38 +1,47 @@
-import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 md:px-16 bg-gradient-to-br from-gray-900 to-black text-white">
-      <div className="max-w-4xl text-center space-y-6">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-          Transforming Data into Intelligent Solutions
-        </h1>
-        <p className="text-xl md:text-2xl text-gray-300">
-          Machine Learning Engineer | AI Enthusiast | Problem Solver
-        </p>
-        <p className="mt-4 text-lg text-gray-400">
-          Welcome to my world of algorithms, models, and data-driven innovation! I’m <span className="font-semibold text-white">Brian Liboso</span>, a passionate Machine Learning Engineer dedicated to building intelligent systems that solve real-world challenges.
-        </p>
-        <p className="text-gray-400">
-          With expertise in <span className="text-white font-medium">deep learning</span>, <span className="text-white font-medium">predictive modeling</span>, <span className="text-white font-medium">NLP</span>, and <span className="text-white font-medium">computer vision</span>, I bridge the gap between raw data and actionable insights—turning complex problems into scalable AI solutions.
-        </p>
-        <div className="text-lg text-gray-300 space-x-2 mt-4">
-          <span>🔍 Exploring Patterns</span>
-          <span>🤖 Engineering Intelligence</span>
-          <span>🚀 Driving Impact</span>
+    <section
+      className="relative w-full min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/background.jpg')" }} // Replace with your background image path
+    >
+      {/* Semi-transparent overlay */}
+      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm z-0" />
+
+      {/* Hero content */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-6 py-16 mx-auto">
+        
+        {/* Left: Text Content */}
+        <div className="md:w-1/2 mb-10 md:mb-0">
+          <h1 className="text-4xl md:text-5xl font-mono font-bold text-gray-900 mb-4">
+            Hello, I'm{' '}
+            <span className="text-blue-600">Your Name</span>
+          </h1>
+          <p className="text-lg font-mono text-gray-800 mb-6">
+            Machine Learning Engineer passionate about building intelligent systems, analyzing data, and creating impactful solutions that solve real-world problems.
+          </p>
+          <Link
+            href="#contact"
+            className="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300"
+          >
+            Let’s Connect →
+          </Link>
         </div>
-        <div className="mt-8 flex justify-center space-x-4">
-          <Link href="#projects">
-            <a className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
-              View My Work
-            </a>
-          </Link>
-          <Link href="#contact">
-            <a className="border border-gray-300 hover:bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-              Get in Touch
-            </a>
-          </Link>
+
+        {/* Right: Circular Profile Image */}
+        <div className="md:w-1/2 flex justify-center">
+          <div className="w-64 h-64 relative rounded-full overflow-hidden border-4 border-white shadow-xl">
+            <Image
+              src="/images/profile.jpg" // Replace with your profile image path
+              alt="Your Profile"
+              layout="fill"
+              objectFit="cover"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
