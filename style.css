@@ -139,4 +139,76 @@
       font-size: 1rem;
     }
   }
+
+/* About Me Section */
+.about-section {
+    background-color: #e0f0ff; /* light blue background */
+    padding: 60px 20px;
+  }
+  
+  .about-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #003366;
+  }
+  
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .about-card {
+    background-color: #ffffff;
+    flex: 1 1 250px;
+    min-width: 250px;
+    max-width: 280px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #00aaff;
+  }
+  
+  .about-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #003366;
+  }
+  
+  .about-card p {
+    font-size: 0.95rem;
+    color: #333333;
+    line-height: 1.5;
+  }
+  
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .about-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-card {
+      width: 90%;
+      max-width: none;
+    }
+  }
   
