@@ -1,4 +1,3 @@
-// Add animations and typing effect after page loads
 window.addEventListener('load', () => {
     const textBox = document.querySelector('.text-box');
     const profileImg = document.querySelector('.profile-image');
@@ -9,23 +8,29 @@ window.addEventListener('load', () => {
       profileImg.classList.add('animate-pop');
     }, 100);
   
-    // Typing effect setup
+    // Typing effect
     const typedText = document.querySelector('.typed-text');
     const cursor = document.querySelector('.cursor');
   
-    const fullText = "Hello, I'm Brian Liboso";
+    // Full text with HTML for styling
+    const fullTextRaw = "Hello, I'm <span class='name'>Brian Liboso</span>";
+    const plainText = "Hello, I'm Brian Liboso";
+  
     let index = 0;
   
     function typeCharacter() {
-      if (index < fullText.length) {
-        typedText.textContent += fullText.charAt(index);
+      if (index < plainText.length) {
+        const currentChar = plainText.charAt(index);
+        typedText.innerHTML = fullTextRaw.slice(0, index)
+          .replace('Brian Liboso', "<span class='name'>Brian Liboso</span>");
         index++;
         setTimeout(typeCharacter, 100);
       } else {
-        cursor.style.display = 'none'; // Hide blinking cursor after typing
+        typedText.innerHTML = fullTextRaw;
+        cursor.style.display = 'none'; // hide cursor after typing
       }
     }
   
-    setTimeout(typeCharacter, 600); // Start typing after animations
+    setTimeout(typeCharacter, 600); // delay before typing
   });
   
