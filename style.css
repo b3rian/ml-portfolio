@@ -5,6 +5,10 @@
     box-sizing: border-box;
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
@@ -12,6 +16,37 @@
     overflow-x: hidden;
   }
   
+  /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 12px 20px;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #00aaff;
+  }
+  
+  /* Hero Section */
   .hero {
     background-image: url('hero-bg.jpg');
     background-size: cover;
@@ -20,7 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
+    padding: 100px 20px 40px;
   }
   
   .hero-content {
@@ -48,6 +83,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
     margin-bottom: 10px;
+    color: #fff;
   }
   
   .text-box .hello {
@@ -56,6 +92,31 @@
   
   .text-box .name {
     color: #00aaff;
+  }
+  
+  /* Typing Animation */
+  .typed-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .cursor {
+    display: inline-block;
+    background-color: #00aaff;
+    width: 3px;
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
   }
   
   .text-box h2 {
@@ -81,8 +142,8 @@
   }
   
   .profile-image img {
-    width: 320px;
-    height: 320px;
+    width: 340px;
+    height: 340px;
     border-radius: 50%;
     object-fit: cover;
     border: 6px solid #ffffffcc;
@@ -131,18 +192,25 @@
       margin-top: 20px;
     }
   
-    .text-box h1 {
+    .text-box h1,
+    .typed-text {
       font-size: 2.2rem;
     }
   
     .text-box h2 {
       font-size: 1rem;
     }
+  
+    .nav-links {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
   }
-
-/* About Me Section */
-.about-me {
-    background-color: #d6efff; /* Light blue background */
+  
+  /* About Me Section */
+  .about-me {
+    background-color: #d6efff;
     padding: 60px 20px;
   }
   
@@ -180,6 +248,7 @@
     font-size: 2.5rem;
     margin-bottom: 12px;
     color: #00aaff;
+    animation: pulseIcon 1.5s infinite ease-in-out;
   }
   
   .about-card h3 {
@@ -195,7 +264,7 @@
     color: #333;
   }
   
-  /* Responsive */
+  /* Responsive About Me */
   @media (max-width: 1024px) {
     .about-card {
       flex: 1 1 calc(50% - 20px);
@@ -207,13 +276,10 @@
       flex: 1 1 100%;
     }
   }
-  .about-icon {
-    animation: pulseIcon 1.5s infinite ease-in-out;
-  }
   
   @keyframes pulseIcon {
     0% { transform: scale(1); opacity: 1; }
     50% { transform: scale(1.2); opacity: 0.8; }
     100% { transform: scale(1); opacity: 1; }
   }
-    
+  
