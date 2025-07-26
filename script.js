@@ -1,4 +1,4 @@
-// Optional: add interactivity later
+// add interactivity later
 window.addEventListener('load', () => {
     const textBox = document.querySelector('.text-box');
     const profileImg = document.querySelector('.profile-image');
