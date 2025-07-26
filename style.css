@@ -89,6 +89,10 @@
   .text-box .hello {
     font-weight: bold;
   }
+  .name {
+    color: #00aaff;
+  }
+  
   
   .text-box .name {
     color: #00aaff;
