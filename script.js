@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     const typedText = document.querySelector('.typed-text');
     const cursor = document.querySelector('.cursor');
   
-    // Full text with HTML for styling
+    // Full text with HTML for stylings
     const fullTextRaw = "Hello, I'm <span class='name'>Brian Liboso</span>";
     const plainText = "Hello, I'm Brian Liboso";
   
