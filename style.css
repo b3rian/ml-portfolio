@@ -367,4 +367,53 @@
       flex: 1 1 100%;
     }
   }
-  
+
+/* Skills Section Enhancements */
+.skills-column ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-column li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  color: #003366;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: bounceIn 0.5s ease-in-out;
+}
+
+.skills-column li:hover {
+  background-color: #e0f0ff;
+  transform: scale(1.02);
+}
+
+.skills-column li::before {
+  content: "🔹";
+  color: #00aaff;
+  font-size: 1rem;
+}
+
+.skills-column li i {
+  font-size: 1.2rem;
+  animation: pulseIcon 1.5s infinite ease-in-out;
+}
+
+/* Pulse icon animation */
+@keyframes pulseIcon {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Skill item entrance animation */
+@keyframes bounceIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
