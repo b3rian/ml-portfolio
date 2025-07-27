@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     const textBox = document.querySelector('.text-box');
     const profileImg = document.querySelector('.profile-image');
   
-    // Trigger content animations
+    // Trigger content animation
     setTimeout(() => {
       textBox.classList.add('animate-fade-slide');
       profileImg.classList.add('animate-pop');
