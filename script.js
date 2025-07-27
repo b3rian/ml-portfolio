@@ -32,5 +32,4 @@ window.addEventListener('load', () => {
     }
   
     setTimeout(typeCharacter, 600); // delay before typing
-  });
-  
+  });  
